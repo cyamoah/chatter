@@ -28,12 +28,11 @@ export default function Chat() {
 		e.preventDefault();
 		try {
 			const { data: data1 } = await base.post(
-				'crm/people/',
+				data.url,
 				{
 					message: data.message,
 				},
 				{
-					url: data.url,
 					headers: {
 						'Content-Type': 'application/json',
 						'Access-Control-Allow-Origin': '*',
