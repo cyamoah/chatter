@@ -27,16 +27,16 @@ export default function Chat() {
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
 		try {
-			const { data: data1 } = await base.post(
+			const { data: data1 } = await base.get(
 				data.url,
-				{
-					message: data.message,
-				},
+				// {
+				// 	message: data.message,
+				// },
 				{
 					headers: {
 						'Content-Type': 'application/json',
 						'Access-Control-Allow-Origin': '*',
-						Authorization: `Bearer ${data.token}`,
+						Authorization: `JWT ${data.token}`,
 						Instance: data.instance,
 					},
 				}
